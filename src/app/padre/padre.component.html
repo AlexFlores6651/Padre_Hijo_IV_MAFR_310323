@@ -1,0 +1,23 @@
+<body>
+  <h1 align="center" style="color: black">Manuel Alejandro Flores Ramirez</h1>
+  <h1 align="center" style="color: black">{{title}}</h1>
+
+  <div *ngFor="let voto of votos" style="text-align: center;">
+    <app-hijo [voto]="voto.title" (unVoto)="addVoto($event)">
+    </app-hijo>
+  </div>
+  <h3>{{votacion}}</h3>
+
+  <div style="color: darkgreen">
+    <p align="center">Votos al Candidato 1: <span style="color: black;"> {{c1}} </span></p>
+    <p align="center">Votos al Candidato 2: <span style="color: black;"> {{c2}} </span></p>
+    <p align="center">Votos al Candidato 3: <span style="color: black;"> {{c3}} </span></p>
+    <p align="center">Votos al Candidato 4: <span style="color: black;"> {{c4}} </span></p>
+  </div>
+
+  <div style="text-align: center;">
+    <button style="padding: 10px" class="btn btn-primary" (click)="finalizarVotaciones()">Finalizar votaciones</button>
+    <p style="padding-top: 10px; color:red;">Cantidad de personas que votaron: <span style="color: black;"> {{totalvotos}} </span></p>
+  </div>
+
+</body>
